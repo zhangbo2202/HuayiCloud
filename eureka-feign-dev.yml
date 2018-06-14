@@ -16,4 +16,4 @@ spring:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     url: jdbc:sqlserver://192.168.1.192;instanceName=sql;DatabaseName=WeiXinKecheng
     username: pqb
-    password: pqb
+    password: pqb1
