@@ -17,4 +17,4 @@ spring:
     url: jdbc:sqlserver://192.168.1.192;instanceName=sql;DatabaseName=WeiXinKecheng
     username: pqb
     password: pqb
-foo: foo version 1
+foo: foo version222
