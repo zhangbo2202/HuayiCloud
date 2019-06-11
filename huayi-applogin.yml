@@ -1,0 +1,183 @@
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+  MaxAutoRetries: 1 #同一台实例最大重试次数,不包括首次调用
+  MaxAutoRetriesNextServer: 1 #重试负载均衡其他的实例最大重试次数,不包括首次调用
+  OkToRetryOnAllOperations: false  #是否所有操作都重试
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.36:8761/eureka
+server:
+  port: 8768
+spring:
+  application:
+    name: kaifa-applogin
+# sqlserver 属性配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    writeDb:
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      url: jdbc:sqlserver://192.168.1.199;DatabaseName=HY_COMMON
+      username: pingqingbo
+      password: pingqingbo
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQueryTimeout: 900000
+      validationQuery: select GETDATE()
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+    readDb:
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      url: jdbc:sqlserver://192.168.1.243;DatabaseName=DS_HY_COMMON
+      username: zhangbo
+      password: Zb_4065789
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQueryTimeout: 900000
+      validationQuery: select GETDATE()
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+    commonDb:
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      url: jdbc:sqlserver://192.168.1.199;DatabaseName=HY_COMMON
+      username: pingqingbo
+      password: pingqingbo
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQueryTimeout: 900000
+      validationQuery: select GETDATE()
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+  #redis配置
+  redis:
+    pool:
+      max-idle: 500
+      min-idle: 400
+      max-wait: 8000
+    database: 5
+    host: 192.168.1.6
+    port: 6379
+
+
+
+#其他参数配置
+username:
+  first: a
+phone:
+  service: 4008880052
+
+
+#子系统验证地址
+#继教管理验证接口地址
+jjglAuthUrl: http://mobile.kjpt.91huayi.com/handler/ZSHuaYiLogin.ashx
+#继教管理登录h5地址
+jjglLoginUrl: http://mobile.kjpt.91huayi.com/ZSHYUserLogin.aspx
+#住院医师验证接口地址
+zyysAuthUrl: http://192.168.1.193:8003/mobile/ZSHY_Abutment/validateUser
+#住院医师登录h5地址
+zyysLoginUrl: http://192.168.1.193:8003/Secure/Zshy_Login
+
+
+#基层培训验证接口地址
+jcpxAuthUrl: http://jkjy.ydjkwxtest.91huayi.net/SQPX/UserInfo/GetUserInfo
+#基层培训登录h5地址
+jcpxLoginUrl: http://jkjy.ydjkwxtest.91huayi.net/SQPX/UserInfo/AutoUserLogin
+#公共卫生验证接口地址
+ggwsAuthUrl: http://ggws.91huayi.net/GGWS/User/GetUserInfo
+#公共卫生登录h5地址
+ggwsLoginUrl: http://ggws.91huayi.net/GGWS/User/AutoLogin
+#内蒙全科验证接口地址
+nmqkAuthUrl: http://192.168.1.245:8030/UserLogin/GetUserInfo
+#内蒙全科登录h5地址
+nmqkLoginUrl: http://192.168.1.245:8030/train/TrainHome/AutoUserLogin
+#百日练兵验证接口地址
+brlbAuthUrl: http://192.168.1.240:8333/UserLogin/GetUserInfo
+#百日练兵登录h5地址
+brlbLoginUrl: http://brlb.91huayi.net/troop/TroopUser/AutoUserLogin
+#湖南能力验证接口
+hnnlAuthUrl: http://192.168.1.245:8030/UserLogin/GetUserInfo
+#湖南能力登录h5地址
+hnnlLoginUrl: http://192.168.1.245:8030/health/HealthUser/AutoUserLogin
+#浙江基层验证接口
+zjjcAuthUrl: http://192.168.1.198:8976/UserLogin/GetUserInfo
+#浙江基层登录h5地址
+zjjcLoginUrl: http://192.168.1.198:8976/health/HealthUser/AutoUserLogin
+#河北国培验证接口
+hbgpAuthUrl: http://hbjc.91huayi.com/UserLogin/GetUserInfo
+#河北国培登录h5地址
+hbgpLoginUrl: http://hbjc.91huayi.com/health/HealthUser/AutoUserLogin
+
+#区域培训登录h5地址
+qypxLoginUrl: http://192.168.1.36:8082/appcheck/userLogin
+
+#能力提升验证接口
+nltsAuthUrl: http://192.168.1.46:9004/app/doLogin
+#能力提升登录h5地址
+nltsLoginUrl: http://192.168.1.193:9111/check.html
+
+#卫生培训验证接口
+wspxAuthUrl: http://192.168.1.46:9101/api-app/callbackFunction/getUserInfo
+
+
+
+#继教管理target_id
+jjglId: 2D7769B2-A1DC-4D5F-B878-88A5269E2C8B
+#住院医师target_id
+zyysId: 55CFFFF3-6ADC-4A9C-8371-3F6743E7023E
+#百日练兵target_id
+brlbId: 2230889D-F5AE-412B-9379-4FF5F7B9F048
+#内蒙全科target_id
+nmqkId: 2230889D-F5AE-412B-9379-4FF5F7B9F048
+#公共卫生target_id
+ggwsId: 9EBB593D-50AC-4C8E-9ABD-50C8A7CDD750
+#基层培训target_id
+jcpxId: 9EBB593D-50AC-4C8E-9ABD-50C8A7CDD750
+#湖南能力target_id
+hnnlId: 2230889D-F5AE-412B-9379-4FF5F7B9F048
+#浙江基层target_id
+zjjcId: 2230889D-F5AE-412B-9379-4FF5F7B9F048
+#河北国培target_id
+hbgpId: 2230889D-F5AE-412B-9379-4FF5F7B9F048
+#区域培训target_id
+qypxId: 938AF833-9D4D-42FE-AB66-3DA08B647C09
+#卫生培训target_id
+wspxId: 7BC83283-1414-48F8-9324-A73C009C4F2A
+
+
+#开发控制台输出日志配置
+debug: true
+logging:
+  level:
+    org.springframework.web: DEBUG
+    com.huayi.applogin: DEBUG
+    com.huayi.applogin.dao: debug
+
+
