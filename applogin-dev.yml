@@ -16,6 +16,11 @@ server:
 spring:
   application:
     name: kaifa-applogin
+  rabbitmq:
+      host: 192.168.1.36
+      port: 5672
+      username: zhangbo
+      password: zhangbo  
 # sqlserver 属性配置
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
