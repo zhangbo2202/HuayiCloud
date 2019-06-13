@@ -15,7 +15,7 @@ server:
   port: 8768
 spring:
   application:
-    name: kaifa-applogin
+    name: applogin
   rabbitmq:
       host: 192.168.1.36
       port: 5672
