@@ -97,7 +97,7 @@ spring:
 
 #其他参数配置
 username:
-  first: aa
+  first: aaaa
 phone:
   service: 4008880052
 
