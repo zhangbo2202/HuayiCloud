@@ -185,6 +185,7 @@ logging:
   level:
     org.springframework.web: DEBUG
     com.huayi.applogin: DEBUG
-    com.huayi.applogin.dao: debug
+    com.huayi.applogin.dao: DEBUG
+    org.springframework.cloud.sleuth: DEBUG
 
 
