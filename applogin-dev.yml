@@ -17,11 +17,16 @@ server:
   port: 8768
 spring:
   application:
-    name: applogin
+    name: kaifa-applogin
 # sqlserver 属性配置
+  #多数据源 1主2从
   datasource:
+   #从库数量
+    readSize: 2
+     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
-    writeDb:
+  #主库
+    write:
       driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
       url: jdbc:sqlserver://192.168.1.199;DatabaseName=HY_COMMON
       username: pingqingbo
@@ -34,13 +39,13 @@ spring:
       timeBetweenEvictionRunsMillis: 60000
       minEvictableIdleTimeMillis: 300000
       validationQueryTimeout: 900000
-      validationQuery: select GETDATE()
+      validationQuery: select getdate()
       testWhileIdle: true
       testOnBorrow: false
       testOnReturn: false
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
-    readDb:
+    read1:
       driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
       url: jdbc:sqlserver://192.168.1.243;DatabaseName=DS_HY_COMMON
       username: zhangbo
@@ -53,15 +58,15 @@ spring:
       timeBetweenEvictionRunsMillis: 60000
       minEvictableIdleTimeMillis: 300000
       validationQueryTimeout: 900000
-      validationQuery: select GETDATE()
+      validationQuery: select getdate()
       testWhileIdle: true
       testOnBorrow: false
       testOnReturn: false
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
-    commonDb:
+    read2:
       driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-      url: jdbc:sqlserver://192.168.1.199;DatabaseName=HY_COMMON
+      url: jdbc:sqlserver://192.168.1.246;DatabaseName=DS_HY_COMMON
       username: pingqingbo
       password: pingqingbo
       filters: stat
@@ -72,7 +77,7 @@ spring:
       timeBetweenEvictionRunsMillis: 60000
       minEvictableIdleTimeMillis: 300000
       validationQueryTimeout: 900000
-      validationQuery: select GETDATE()
+      validationQuery: select getdate()
       testWhileIdle: true
       testOnBorrow: false
       testOnReturn: false
@@ -92,6 +97,7 @@ spring:
       port: 5672
       username: zhangbo
       password: zhangbo
+
 
 
 
