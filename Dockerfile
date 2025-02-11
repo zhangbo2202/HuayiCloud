@@ -1,1 +1,1 @@
-FROM mintplexlabs/anythingllm --platform=arm64
+FROM mintplexlabs/anythingllm --platform arm64
